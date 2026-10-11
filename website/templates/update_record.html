@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <form method ="POST" action="{% url 'update_record' current_record.id %}" style="width: 100%; max-width: 450px;">
+             {% csrf_token %}
+             {{form.as_p}}
+            <button type="submit" class="btn btn-secondary">Update</button>
+        </form>
+    </div>
+</div>
+{%endblock %}
